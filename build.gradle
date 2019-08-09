@@ -1,0 +1,42 @@
+group group
+version version
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${dependencyVersionKotlin}")
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = "com.latitude.challenge.MainKt"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:${dependencyVersionKotlin}")
+    implementation("org.apache.commons:commons-io:${dependencyVersionApacheCommonsIO}")
+    implementation("org.slf4j:slf4j-api:${dependencyVersionSlf4j}")
+    implementation("ch.qos.logback:logback-core:${dependencyVersionLogBack}")
+    implementation("ch.qos.logback:logback-classic:${dependencyVersionLogBack}")
+
+    //Test dependencies
+    testImplementation("org.assertj:assertj-core:${dependencyVersionAssertJ}")
+    testImplementation("junit:junit:${dependencyVersionJunit}")
+    testImplementation("org.mockito:mockito-core:${dependencyVersionMockitoCore}")
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
