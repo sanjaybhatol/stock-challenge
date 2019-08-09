@@ -29,14 +29,7 @@ To run the app:
     Run app using: ./gradlew run
     or if using intellij, right click on Main.kt and click run. (Note: While running from IntelliJ make sure right version of Kotlin is installed)
     
-Assumptions
-===========
-
-- Input can be from a file, or from standard input, as the developer chooses.
-    - Chose input from a file
-
-Description
------------
+    When you will run the app, it will ask for the input request data. User will need to pass comma separated values as part of it. Only integer values are accepted.
 
 
 Constraints

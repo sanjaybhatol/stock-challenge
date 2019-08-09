@@ -16,6 +16,10 @@ apply plugin: 'application'
 
 mainClassName = "com.latitude.challenge.MainKt"
 
+run {
+    standardInput = System.in
+}
+
 repositories {
     mavenCentral()
 }
@@ -23,7 +27,6 @@ repositories {
 dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${dependencyVersionKotlin}")
-    implementation("org.apache.commons:commons-io:${dependencyVersionApacheCommonsIO}")
     implementation("org.slf4j:slf4j-api:${dependencyVersionSlf4j}")
     implementation("ch.qos.logback:logback-core:${dependencyVersionLogBack}")
     implementation("ch.qos.logback:logback-classic:${dependencyVersionLogBack}")
@@ -31,7 +34,6 @@ dependencies {
     //Test dependencies
     testImplementation("org.assertj:assertj-core:${dependencyVersionAssertJ}")
     testImplementation("junit:junit:${dependencyVersionJunit}")
-    testImplementation("org.mockito:mockito-core:${dependencyVersionMockitoCore}")
 }
 
 compileKotlin {
